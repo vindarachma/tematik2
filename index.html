@@ -1,0 +1,385 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>TEMATIK 4.2</title>
+<style type="text/css">
+.chkans {
+margin:10px 10px -5px 0;
+} 
+
+span.chkans {
+position:relative;
+top:5px
+} 
+
+* html span.chkans {
+top:2px
+} 
+</style>
+<script type="text/javascript">
+
+//Set number of questions
+var numQuest=3
+
+////////////////Stop Editing///////////////
+var ie=document.all
+function showAnswer(el,ans){
+ie? ie[el].innerHTML='The answer is: '+ ans : document.getElementById(el).innerHTML='The answer is: '+ ans
+}
+
+function addup()  {
+var q, right, statement, total=0
+questions=new Array();
+for (i = 0; i < numQuest; i++)
+questions[i]=0
+if (document.forms.quiz.q1['right1']){
+for (i = 0; i < numQuest; i++){
+q="q"+(i+1)
+right="right"+(i+1)
+if (document.forms.quiz[q][right].checked)
+questions[i]=1
+}
+}
+else if (document.getElementById){
+for (i = 0; i < numQuest; i++){
+right="right"+(i+1)
+if (document.getElementById(right).checked)
+questions[i]=1
+}
+}
+else
+return;
+for (i = 0; i < numQuest; i++)
+total += questions[i]
+/*/////////////////////////////////////////////////
+Set score response below.
+///////////////////Edit Below to Suit/////////////*/
+statement='You scored '+ total +' out of '+ numQuest +' correct, '+ Math.round(total/numQuest*100) +'%'
+/////////////////Stop Editing///////////////////
+ie? ie.results.innerHTML=statement : document.getElementById('results').innerHTML=statement
+}
+function clearR(){
+ie? ie.results.innerHTML='' : document.getElementById('results').innerHTML=''
+for (i = 0; i < numQuest; i++)
+ie? ie["ans"+(i+1)].innerHTML='' : document.getElementById("ans"+(i+1)).innerHTML=''
+}
+</script>
+
+
+    <link rel="stylesheet" href="jquery.mobile-1.3.2.min.css"/>
+    <script src="jquery-1.7.1.min.js"></script>
+	<script src="jquery.mobile-1.3.2.min.js"></script>
+
+</head>
+<body>
+
+<div id="page1" data-role="page" data-theme="e">
+<table width="1200" border="0">
+	<tr>
+	<td align="center"><img src="images/judul_tema2.jpg"><br><br></td>
+    </tr>
+</table>
+	
+    <a href="#popupMenu" data-rel="popup" data-role="button" data-inline="true" data-transition="slideup" data-icon="gear" data-theme="e">Pilih Menu</a>
+            <div data-role="popup" id="popupMenu" data-theme="d">
+                    <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+                        <li data-role="divider" data-theme="e">Menu Belajar</li>
+                        <li><a href="#page1">Pengantar</a></li>
+                        <li><a href="#page2">Tahukah Kamu?</a></li>
+                        <li><a href="#page3">Ayo Ceritakan</a></li>
+                        <li><a href="#page4">Ayo Bekerjasama</a></li>
+                        <li><a href="#page5">Ayo Ungkapkan Perasaanmu</a></li>
+                        <li><a href="#page6">Ayo Renungkan</a></li>
+                        <li><a href="#page7">Kerjasama dengan Orang Tua</a></li>
+                    </ul>
+           	  </div> <br> <br>
+       
+              
+        	<div align="center" class="ui-grid-solo"><div class=" ui-bar-e" style="height:1200px">
+            	<div>
+                	<img src="images/pengantar1.png"> &nbsp;&nbsp; <img src="images/pengantar2.png"> &nbsp;&nbsp; <img src="images/pengantar3.png">
+                </div>
+            </div>        
+        </div>
+            <div data-role="footer" data-position="fixed" data-theme="a">
+       			<h4>Pembelajaran 5</h4>
+            </div>
+	</div>
+    
+    
+    
+    <div id="page2" data-role="page" data-theme="e">
+      
+	
+    <a href="#popupMenu" data-rel="popup" data-role="button" data-inline="true" data-transition="slideup" data-icon="gear" data-theme="e">Pilih Menu</a>
+            <div data-role="popup" id="popupMenu" data-theme="d">
+                    <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+                        <li data-role="divider" data-theme="e">Menu Belajar</li>
+                        <li><a href="#page1">Pengantar</a></li>
+                        <li><a href="#page2">Tahukah Kamu?</a></li>
+                        <li><a href="#page3">Ayo Ceritakan</a></li>
+                        <li><a href="#page4">Ayo Bekerjasama</a></li>
+                        <li><a href="#page5">Ayo Ungkapkan Perasaanmu</a></li>
+                        <li><a href="#page6">Ayo Renungkan</a></li>
+                        <li><a href="#page7">Kerjasama dengan Orang Tua</a></li>
+                    </ul>
+           	  </div> <br> <br>
+       
+              
+        	<div class="ui-grid-solo"><div class=" ui-bar-e" style="height:700px">
+            	<div data-role="content">
+                    <img src="images/tahukahkamu.png">
+                    <br><br>
+                    <p align="justify">
+                    <img src="images/pic01.png">
+                    <br><br> <img src="images/soal1.jpg">
+                    <br><br>
+                                
+              </div>
+         	</div></div>       
+            <div data-role="footer" data-position="fixed" data-theme="a">
+       			<h4>PEMBELAJARAN 5</h4>
+       		</div>
+        
+	</div>
+    
+    
+    
+     <div id="page3" data-role="page" data-theme="e">
+      	<a href="#popupMenu" data-rel="popup" data-role="button" data-inline="true" data-transition="slideup" data-icon="gear" data-theme="e">Pilih Menu</a>
+            <div data-role="popup" id="popupMenu" data-theme="d">
+                    <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+                        <li data-role="divider" data-theme="e">Menu Belajar</li>
+                        <li><a href="#page1">Pengantar</a></li>
+                        <li><a href="#page2">Tahukah Kamu?</a></li>
+                        <li><a href="#page3">Ayo Ceritakan</a></li>
+                        <li><a href="#page4">Ayo Bekerjasama</a></li>
+                        <li><a href="#page5">Ayo Ungkapkan Perasaanmu</a></li>
+                        <li><a href="#page6">Ayo Renungkan</a></li>
+                        <li><a href="#page7">Kerjasama dengan Orang Tua</a></li>
+                    </ul>
+           	  </div> <br> <br>
+       
+              
+        	<div class="ui-grid-solo"><div class=" ui-bar-e" style="height:1500px">
+        
+                
+                <div data-role="content">
+                    <img src="images/ayoceritakan.png">
+                    <br><br>
+                    <p align="justify">
+                    Amati dan pahami proses terjadinya minyak bumi di bawah ini! <br>
+                    <table border="0">
+                    <tr>
+                        <td rowspan="2"><img src="images/pic02.png"></td>
+                        <td>&nbsp;&nbsp;&nbsp;</td>
+                        <td><b>500 juta tahun yang lalu :</b> <br>
+        Tumbuhan dan hewan yang hidup pada masa purba mati.<br>
+        Badannya terkubur di dasar lautan atau di dalam tanah, lalu tertimbun
+        pasir dan lumpur.<br><br></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;</td>
+                        <td><b>200 juta tahun yang lalu :</b> <br>
+        Terbentuk lapisan yang kaya zat organik yang akhirnya akan menjadi
+        batuan endapan.
+        <p>Bakteri mengurai batuan endapan menjadi material yang kaya
+        hidrogen dan karbon. Bahan ini merupakan bahan dasar dari minyak
+        bumi.</p>
+        <p>Proses berulang terus, satu lapisan menutup lapisan sebelumnya.</p>
+        <p>Tekanan dan suhu yang semakin tinggi dari lapisan bebatuan di
+        atasnya mengubahnya menjadi minyak bumi dan gas alam.</p>
+                        </td>
+                    </tr>
+                    </table>
+                    
+                    <p>Minyak bumi yang berada di lapisan kerak belum dapat langsung dipakai, harus
+        dikeluarkan dari perut bumi dan diolah terlebih dahulu. Hasil pengolahan minyak
+        bumi berupa bahan bakar minyak, bensin, solar, minyak tanah, avtur, dan gas alam.</p>
+                    <p>Ceritakan proses terjadinya minyak bumi menggunakan kalimatmu sendiri berdasarkan
+        informasi di atas!</p>
+                    <p><img src="images/pic03.png"></p>
+                    <p>Oh, ternyata begitulah proses terjadinya minyak bumi. Yuk, kita belajar lebih banyak
+        lagi tentang minyak bumi.<br></p>
+                                
+               </div>
+               
+        </div></div>       
+       <div data-role="footer" data-position="fixed" data-theme="a">
+       			<h4>PEMBELAJARAN 5</h4>
+       </div>
+	</div>
+    
+    
+    
+    <div id="page4" data-role="page" data-theme="e">
+        <a href="#popupMenu" data-rel="popup" data-role="button" data-inline="true" data-transition="slideup" data-icon="gear" data-theme="e">Pilih Menu</a>
+            <div data-role="popup" id="popupMenu" data-theme="d">
+                    <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+                        <li data-role="divider" data-theme="e">Menu Belajar</li>
+                        <li><a href="#page1">Pengantar</a></li>
+                        <li><a href="#page2">Tahukah Kamu?</a></li>
+                        <li><a href="#page3">Ayo Ceritakan</a></li>
+                        <li><a href="#page4">Ayo Bekerjasama</a></li>
+                        <li><a href="#page5">Ayo Ungkapkan Perasaanmu</a></li>
+                        <li><a href="#page6">Ayo Renungkan</a></li>
+                        <li><a href="#page7">Kerjasama dengan Orang Tua</a></li>
+                    </ul>
+           	  </div> <br> <br>
+       
+              
+        <div class="ui-grid-solo"><div class=" ui-bar-e" style="height:1300px">
+          
+        
+        <div data-role="content">
+        	<img src="images/ayobekerjasama.png">
+            <br><br>
+        	<p align="justify">
+            Bersama teman-teman kelompokmu, diskusikan dan jawablah pertanyaan-pertanyaan
+di bawah ini! Kamu bisa mencari sumber informasi lain pada buku-buku, surat kabar,
+majalah yang ada di perpustakaan.
+            </p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp; 1. Apakah minyak bumi termasuk salah satu sumber energi? Jelaskan dengan singkat!</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp; 2. Apakah minyak bumi suatu saat akan habis? Jelaskan dengan singkat!!</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp; 3. Apa saja yang menyebabkan kelangkaan BBM (Bahan Bakar Minyak)? Tuliskan paling sedikit 5 penyebabnya.</p>
+       <p>&nbsp;&nbsp;&nbsp;&nbsp; 4. Bagaimana supaya BBM tidak cepat habis? sebutkan paling sedikit 3 cara
+untuk menghematnya!</p>
+		<p>Tuliskan hasil diskusi kalian di bawah ini!</p>
+        <p><img src="images/pic04.png"></p>	
+        <p>Presentasikan hasil diskusi kelompokmu di depan kelompok yang lain! Beri kesempatan
+    pada setiap anggota kelompok untuk berbicara atau menjawab pertanyaan dari
+    kelompok lain.<br><br>
+    Ingat, saat berbicara di depan kelas, pastikan suaramu cukup jelas terdengar. Bicaralah
+    dengan kalimat yang teratur dan tidak terburu-buru.<br><br>
+    Jika kamu telah selesai melakukan presentasi, mintalah satu orang temanmu untuk
+    memberikan penilaian dalam tabel di bawah ini, dan kamu juga memberikan penilaian
+    terhadap presentasi seorang temanmu.</p>
+    	<p>Beri tanda √ pada kolom sesuai dengan presentasi teman kamu.</p>		 
+        <p><img src="images/tabel.png"></p>       	
+      </div>
+      </div></div>
+      
+      <div data-role="footer" data-position="fixed" data-theme="a">
+     		<h4>PEMBELAJARAN 5</h4>
+      </div>
+	</div>
+    
+    
+    
+    
+     <div id="page5" data-role="page" data-theme="e">
+        <a href="#popupMenu" data-rel="popup" data-role="button" data-inline="true" data-transition="slideup" data-icon="gear" data-theme="e">Pilih Menu</a>
+            <div data-role="popup" id="popupMenu" data-theme="d">
+                    <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+                        <li data-role="divider" data-theme="e">Menu Belajar</li>
+                        <li><a href="#page1">Pengantar</a></li>
+                        <li><a href="#page2">Tahukah Kamu?</a></li>
+                        <li><a href="#page3">Ayo Ceritakan</a></li>
+                        <li><a href="#page4">Ayo Bekerjasama</a></li>
+                        <li><a href="#page5">Ayo Ungkapkan Perasaanmu</a></li>
+                        <li><a href="#page6">Ayo Renungkan</a></li>
+                        <li><a href="#page7">Kerjasama dengan Orang Tua</a></li>
+                    </ul>
+           	  </div> <br> <br>
+       
+              
+        <div class="ui-grid-solo"><div class=" ui-bar-e" style="height:900px">
+          
+        
+        <div data-role="content">
+        	<img src="images/ungkapkanperasaanmu.png">
+            <br>
+ 			<p align="center"><img src="images/pic05.png"></p>
+            <p>Sekarang bantulah Dayu untuk menyebarkan informasi tentang pentingnya menjaga
+dan memanfaatkan sumber-sumber energi. Kamu bisa membantu Dayu dengan
+membuat slogan.</p>
+			<p>Slogan adalah perkataan atau kalimat pendek yang menarik atau mencolok dan
+mudah diingat untuk memberitahukan sesuatu.</p>
+			<p>Buatlah poster yang berisi slogan-slogan yang menarik, disertai dengan gambar dan
+warna sehingga orang lain akan tertarik untuk membaca sloganmu.</p>
+			<p>Kamu bisa memasang poster berisi slogan-slogan tersebut di sekitar lingkungan
+sekolah. Berikut adalah contoh-contoh slogan.</p>
+			<p align="center"><img src="images/pic06.png"></p>
+         </div>
+          </div></div>
+      
+      <div data-role="footer" data-position="fixed" data-theme="a">
+     		<h4>PEMBELAJARAN 5</h4>
+      </div>
+	</div>
+    
+    
+    
+    
+    <div id="page6" data-role="page" data-theme="e">
+        <a href="#popupMenu" data-rel="popup" data-role="button" data-inline="true" data-transition="slideup" data-icon="gear" data-theme="e">Pilih Menu</a>
+            <div data-role="popup" id="popupMenu" data-theme="d">
+                    <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+                        <li data-role="divider" data-theme="e">Menu Belajar</li>
+                        <li><a href="#page1">Pengantar</a></li>
+                        <li><a href="#page2">Tahukah Kamu?</a></li>
+                        <li><a href="#page3">Ayo Ceritakan</a></li>
+                        <li><a href="#page4">Ayo Bekerjasama</a></li>
+                        <li><a href="#page5">Ayo Ungkapkan Perasaanmu</a></li>
+                        <li><a href="#page6">Ayo Renungkan</a></li>
+                        <li><a href="#page7">Kerjasama dengan Orang Tua</a></li>
+                    </ul>
+           	  </div> <br> <br>
+       
+              
+        <div class="ui-grid-solo"><div class=" ui-bar-e" style="height:300px">
+          
+        
+        <div data-role="content">
+        	<img src="images/ayorenungkan.png">
+            <br>
+            <p>1. Apa saja yang telah kalian pelajari hari ini?</p>
+            <p>2. Hal apa saja yang menarik dari kegiatanmu hari ini?</p>
+            <p>3. Apa lagi yang ingin kamu ketahui dari pelajaran hari ini?</p>
+        </div>
+          </div></div>
+      
+      <div data-role="footer" data-position="fixed" data-theme="a">
+     		<h4>PEMBELAJARAN 5</h4>
+      </div>
+	</div>
+    
+    
+    
+    
+    <div id="page7" data-role="page" data-theme="e">
+        <a href="#popupMenu" data-rel="popup" data-role="button" data-inline="true" data-transition="slideup" data-icon="gear" data-theme="e">Pilih Menu</a>
+            <div data-role="popup" id="popupMenu" data-theme="d">
+                    <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+                        <li data-role="divider" data-theme="e">Menu Belajar</li>
+                        <li><a href="#page1">Pengantar</a></li>
+                        <li><a href="#page2">Tahukah Kamu?</a></li>
+                        <li><a href="#page3">Ayo Ceritakan</a></li>
+                        <li><a href="#page4">Ayo Bekerjasama</a></li>
+                        <li><a href="#page5">Ayo Ungkapkan Perasaanmu</a></li>
+                        <li><a href="#page6">Ayo Renungkan</a></li>
+                        <li><a href="#page7">Kerjasama dengan Orang Tua</a></li>
+                    </ul>
+           	  </div> <br> <br>
+       
+              
+        <div class="ui-grid-solo"><div class=" ui-bar-e" style="height:300px">
+          
+        
+        <div data-role="content">
+        	<img src="images/kerjasamadenganortu.png">
+            <br>
+            <p>Carilah informasi tentang penggunaan Bahan Bakar Minyak (BBM) di sekitar rumahmu. <br>
+Catat informasi yang kamu dapat untuk dibandingkan dengan temanmu.</p>
+        </div>
+        </div></div>
+      
+      <div data-role="footer" data-position="fixed" data-theme="a">
+     		<h4>PEMBELAJARAN 5</h4>
+      </div>
+	</div>    
+            
+    
+</body>
+</html>
